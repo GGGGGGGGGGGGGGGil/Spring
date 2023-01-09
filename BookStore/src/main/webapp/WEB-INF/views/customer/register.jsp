@@ -13,6 +13,10 @@
 		<form action="/BookStore/customer/register" method="post">
 			<table border="1">
 				<tr>
+					<td>고객번호</td>
+					<td><input type="text" name="custId"></td>
+				</tr>
+				<tr>
 					<td>고객명</td>
 					<td><input type="text" name="name"></td>
 				</tr>

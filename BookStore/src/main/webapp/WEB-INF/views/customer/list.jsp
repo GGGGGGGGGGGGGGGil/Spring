@@ -9,14 +9,14 @@
 	<body>
 		<h3>고객목록</h3>
 		<a href="/BookStore/">처음으로</a>
-		<a href="/BookStore/bcustomer/register">고객등록</a>
+		<a href="/BookStore/customer/register">고객등록</a>
 		
 		<table border="1">
 			<tr>
 				<th>고객번호</th>
 				<th>고객명</th>
 				<th>주소</th>
-				<th>후대폰</th>
+				<th>휴대폰</th>
 				<th>관리</th>			
 			</tr>
 			<c:forEach var="customers" items="${customers}">
@@ -26,8 +26,8 @@
 					<td>${customers.address}</td>
 					<td>${customers.phone}</td>
 					<td>
-						<a href="/BookStore/customer/modify?bookId=${books.bookId}">수정</a>				
-						<a href="/BookStore/customer/delete?bookId=${books.bookId}">삭제</a>				
+						<a href="/BookStore/customer/modify?custId=${customers.custId}">수정</a>				
+						<a href="/BookStore/customer/delete?custId=${customers.custId}">삭제</a>				
 					</td>
 				</tr>
 			</c:forEach>

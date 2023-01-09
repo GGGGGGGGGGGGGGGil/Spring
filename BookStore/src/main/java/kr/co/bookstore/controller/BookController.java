@@ -22,23 +22,19 @@ public class BookController {
 	public String list(Model model) {
 		
 		List<BookVO> books = service.selectBooks();
-		
 		model.addAttribute("books", books);
 		
 		return "/book/list";
 	}
-	
 	@GetMapping("/book/register")
 	public String register() {
 		return "/book/register";
 	}
-	
 	@PostMapping("/book/register")
 	public String register(BookVO vo) {
 		service.insertBook(vo);
 		return "redirect:/book/list";
 	}
-	
 	@GetMapping("/book/modify")
 	public String modify(Model model, String bookId) {
 		
@@ -47,8 +43,6 @@ public class BookController {
 		
 		return "/book/modify";
 	}
-	
-	
 	@PostMapping("/book/modify")
 	public String modify(BookVO vo) {
 		
@@ -56,7 +50,6 @@ public class BookController {
 		
 		return "redirect:/book/list";
 	}
-	
 	@GetMapping("/book/delete")
 	public String delete(String bookId) {
 		
@@ -64,5 +57,4 @@ public class BookController {
 		
 		return "redirect:/book/list";
 	}
-	
 }

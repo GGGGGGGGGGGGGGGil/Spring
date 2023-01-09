@@ -6,10 +6,10 @@
 	<insert id="insertCustomer">
 		INSERT INTO `customer` VALUES (#{custId}, #{name}, #{address}, #{phone});
 	</insert>
-	<select id="selectCustomer" resultType="kr.co.bookstore.vo.CustVO">
+	<select id="selectCustomer" resultType="kr.co.bookstore.vo.CustomerVO">
 		SELECT * FROM `customer` WHERE `custId`=#{custId};
 	</select>
-	<select id="selectCustomers" resultType="kr.co.bookstore.vo.CustVO">
+	<select id="selectCustomers" resultType="kr.co.bookstore.vo.CustomerVO">
 		SELECT * FROM `customer`;
 	</select>
 	<update id="updateCustomer">

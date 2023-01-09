@@ -1,7 +1,7 @@
 package kr.co.bookstore.vo;
 
-public class CustVO {
-
+public class CustomerVO {
+	
 	private int custId;
 	private String name;
 	private String address;

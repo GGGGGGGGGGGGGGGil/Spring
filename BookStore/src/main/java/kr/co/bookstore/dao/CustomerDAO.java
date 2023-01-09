@@ -6,28 +6,28 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.co.bookstore.vo.CustVO;
+import kr.co.bookstore.vo.CustomerVO;
 
 @Repository
-public class CustDAO {
+public class CustomerDAO {
 
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
 	
-	public void insertCustomer(CustVO vo) {
+	public void insertCustomer(CustomerVO vo) {
 		mybatis.insert("customer.insertCustomer", vo);
 	}
 	
-	public CustVO selectCustomer(String custId) {
+	public CustomerVO selectCustomer(String custId) {
 		return mybatis.selectOne("customer.selectCustomer", custId);
 	}
 	
-	public List<CustVO> selectCustomers() {
+	public List<CustomerVO> selectCustomers() {
 		return mybatis.selectList("customer.selectCustomers");
 	}
 	
-	public void updateCustomer(CustVO vo) {
+	public void updateCustomer(CustomerVO vo) {
 		mybatis.update("customer.updateCustomer", vo);
 	}
 	

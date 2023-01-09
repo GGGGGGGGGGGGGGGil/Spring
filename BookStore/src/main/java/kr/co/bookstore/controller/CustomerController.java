@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.co.bookstore.service.CustomerService;
-import kr.co.bookstore.vo.CustVO;
+import kr.co.bookstore.vo.CustomerVO;
 
 @Controller
 public class CustomerController {
@@ -21,36 +21,30 @@ public class CustomerController {
 	@GetMapping("/customer/list")
 	public String list(Model model) {
 		
-		List<CustVO> Customers = service.selectCustomers();
-		
-		model.addAttribute("Customers", Customers);
+		List<CustomerVO> customers = service.selectCustomers();
+		model.addAttribute("customers", customers);
 		
 		return "/customer/list";
 	}
-	
 	@GetMapping("/customer/register")
 	public String register() {
 		return "/customer/register";
 	}
-	
 	@PostMapping("/customer/register")
-	public String register(CustVO vo) {
+	public String register(CustomerVO vo) {
 		service.insertCustomer(vo);
 		return "redirect:/customer/list";
 	}
-	
 	@GetMapping("/customer/modify")
 	public String modify(Model model, String custId) {
 		
-		CustVO customers = service.selectCustomer(custId);
+		CustomerVO customers = service.selectCustomer(custId);
 		model.addAttribute("customers", customers);
 		
 		return "/customer/modify";
 	}
-	
-	
 	@PostMapping("/customer/modify")
-	public String modify(CustVO vo) {
+	public String modify(CustomerVO vo) {
 		
 		service.updateCustomer(vo);
 		
@@ -64,5 +58,4 @@ public class CustomerController {
 		
 		return "redirect:/customer/list";
 	}
-	
 }
